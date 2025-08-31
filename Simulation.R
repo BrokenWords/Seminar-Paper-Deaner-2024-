@@ -5,11 +5,11 @@ library(doParallel)
 library(doRNG)
 library(irlba)
 library(RcppNumerical)
-source("C:\\Users\\12833\\OneDrive\\LMU\\第三学期\\SEMINAR\\Simulation\\Simfunctions.R")
+source("Simfunctions.R")
 
 # param
 rep <- 500
-par <- read.csv("C:\\Users\\12833\\OneDrive\\LMU\\第三学期\\SEMINAR\\Simulation\\SimModels.csv", header = T, colClasses=rep("numeric", 4))
+par <- read.csv("SimModels.csv", header = T, colClasses=rep("numeric", 4))
 
 for (j in 1:6) {
   n   <- par$n[j]
@@ -46,4 +46,5 @@ for (j in 1:6) {
   write.table(output_df, 
               paste0("output_deaner_par", j, ".txt"), 
               sep = ",", row.names = F, col.names = T)
+
 }
