@@ -11,11 +11,11 @@ library(doParallel)
 library(doRNG)
 library(irlba)
 library(RcppNumerical)
-source("C:\\Users\\12833\\OneDrive\\LMU\\第三学期\\SEMINAR\\Other Literature\\Feng's Paper\\Feng-2024_SimFuns.R")
+source("Feng-2024_SimFuns.R")
 
 # param
 rep <- 500
-par <- read.csv("C:\\Users\\12833\\OneDrive\\LMU\\第三学期\\SEMINAR\\Other Literature\\Feng's Paper\\Feng-2024_SimModels.csv", header = T, colClasses=c(rep("numeric", 6), "logical"))
+par <- read.csv("Feng-2024_SimModels.csv", header = T, colClasses=c(rep("numeric", 6), "logical"))
 
 for (j in 1:6) {
 n   <- par$n[j]
@@ -55,3 +55,4 @@ write.table(output, paste("C:\\Users\\12833\\OneDrive\\LMU\\第三学期\\SEMINA
             row.names = F, col.names = F)
 
 }
+
